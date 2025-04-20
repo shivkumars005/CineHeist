@@ -1,6 +1,5 @@
-streamlit
+streamlit==1.18.1  
 pandas
 numpy
 matplotlib
 scikit-learn
-base64
