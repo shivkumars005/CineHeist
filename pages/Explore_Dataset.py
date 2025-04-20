@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import base64
 
-st.set_page_config(page_title="Dataset | CineHeist",page_icon="BG_Images/favicon.ico", layout="wide")
+st.set_page_config(page_title="Dataset | CineHeist",page_icon="Images/favicon.ico", layout="wide")
 st.title("Explore the Dataset")
 
 @st.cache_data

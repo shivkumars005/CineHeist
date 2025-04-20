@@ -5,7 +5,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 import urllib.parse
 import base64
 
-st.set_page_config(page_title="Plot Recommendation | CineHeist",page_icon="BG_Images/favicon.ico", layout="wide")
+st.set_page_config(page_title="Plot Recommendation | CineHeist",page_icon="Images/favicon.ico", layout="wide")
 st.title("🎥 Plot-Based Movie Recommendations")
 
 

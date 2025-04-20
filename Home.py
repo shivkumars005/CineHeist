@@ -1,7 +1,7 @@
 import streamlit as st
 import base64
 
-st.set_page_config(page_title="Home | CineHeist",page_icon="BG_Images/favicon.ico", layout="wide")
+st.set_page_config(page_title="Home | CineHeist",page_icon="Images/favicon.ico", layout="wide")
 
 st.markdown("""
     <div style="text-align: center; margin-top: 50px;">

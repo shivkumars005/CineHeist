@@ -4,7 +4,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import base64
 
-st.set_page_config(page_title="Title Recommendation | CineHeist",page_icon="BG_Images/favicon.ico", layout="wide")
+st.set_page_config(page_title="Title Recommendation | CineHeist",page_icon="Images/favicon.ico", layout="wide")
 st.title("🎥 Movie Title-Based Recommendations")
 
 # Load dataset
