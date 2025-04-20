@@ -42,4 +42,4 @@ def set_background(image_path):
     st.markdown(background_css, unsafe_allow_html=True)
 
 # Main app
-set_background("BG_Images/Home_Bg.jpg")
+set_background("Images/Home_Bg.jpg")
