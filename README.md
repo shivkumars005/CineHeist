@@ -39,5 +39,6 @@
 Check it out 👉 [Live now](https://cineheistbysk.streamlit.app/)
 
 # Contact me:
-LinkedIn : https://www.linkedin.com/in/shivakumarsouta
+LinkedIn : https://www.linkedin.com/in/shivakumarsouta/
 Email : shivakumarsouta18@gmail.com
+Portfolio : https://shivakumarsouta-portfolio.vercel.app/
