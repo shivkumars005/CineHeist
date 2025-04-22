@@ -36,8 +36,8 @@
 # Preview
     > Launch the app and see an interactive UI with movie recommendations.
  
-Check it out 👉 [GitHub Repo](https://github.com/shivkumars005/MoviesRecommend)
+Check it out 👉 [Live now](https://cineheistbysk.streamlit.app/)
 
 # Contact me:
-    LinkedIn : https://www.linkedin.com/in/shivakumarsouta
-    Email : shivakumarsouta18@gmail.com
+LinkedIn : https://www.linkedin.com/in/shivakumarsouta
+Email : shivakumarsouta18@gmail.com
