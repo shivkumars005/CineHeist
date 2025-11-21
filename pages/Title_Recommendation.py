@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
+import urllib.parse
 
 st.set_page_config(page_title="Title Recommendation | CineHeist",page_icon="Images/favicon.ico", layout="wide")
 st.title("🎥 Movie Title-Based Recommendations")
@@ -35,6 +36,12 @@ def recommend_by_title(selected_movie, df, tfidf, tfidf_matrix, num_recommendati
     top_indices = [i for i in top_indices if i != movie_idx]  # Exclude the selected movie itself
     return df.iloc[top_indices][['title', 'overview', 'genre', 'vote_average', 'release_date']]
 
+# Function to generate links dynamically (e.g., IMDb or TMDb)
+def generate_movie_link(title):
+    base_url = "https://www.imdb.com/find?q="
+    query = urllib.parse.quote(title)  # URL encode the title
+    return f"{base_url}{query}"
+
 # Dropdown for movie selection
 movie_titles = movies_df['title'].tolist()
 selected_movie = st.selectbox("Select a Movie", movie_titles)
@@ -48,14 +55,18 @@ if selected_movie:
     if recommendations.empty:
         st.error("No recommendations found. Try selecting a different movie.")
     else:
-        st.write(f"### Movies similar to **{selected_movie}**:")
+        st.write("### Recommended Movies:")
         for idx, row in recommendations.iterrows():
-            st.markdown(f"""
-                **🎥 {row['title']}**
-                - **Overview**: {row['overview']}
-                - **Genres**: {row['genre']}
-                - **Rating**: {row['vote_average']} / 10
-                - **Release Date**: {row['release_date']}
-            """)
+            movie_link = generate_movie_link(row['title'])  # Generate link for each movie
+            with st.container():
+                st.markdown(f"""
+                    <div class="movie-box">
+                        <h4>🎥 <a class="movie-link" href="{movie_link}" target="_blank">{row['title']}</a></h4>
+                        <p><strong>Overview:</strong> {row['overview']}</p>
+                        <p><strong>Genres:</strong> {row['genre']}</p>
+                        <p><strong>Rating:</strong> {row['vote_average']} / 10</p>
+                        <p><strong>Release Date:</strong> {row['release_date']}</p>
+                    </div>
+                """, unsafe_allow_html=True)
 else:
     st.info("Select a movie from the dropdown to see recommendations.")
